@@ -17,8 +17,8 @@ This folder contains my Java solutions for array problems.
 
 - [ ] Linear Search
 - [ ] Largest Element
-- [ ] Reverse Array
-- [ ] Pairs in Array
-- [ ] Print Subarrays
-- [ ] Maximum Subarray Sum
+- [x] Reverse Array
+- [x] Pairs in Array
+- [x] Print Subarrays
+- [x] Maximum Subarray Sum
 - [ ] Binary Search
