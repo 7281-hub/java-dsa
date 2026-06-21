@@ -15,10 +15,10 @@ This folder contains my Java solutions for array problems.
 
 ## Progress
 
-- [ ] Linear Search
-- [ ] Largest Element
+- [x] Linear Search
+- [x] Largest Element
 - [x] Reverse Array
 - [x] Pairs in Array
 - [x] Print Subarrays
 - [x] Maximum Subarray Sum
-- [ ] Binary Search
+- [x] Binary Search
