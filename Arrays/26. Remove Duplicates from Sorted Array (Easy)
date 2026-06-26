@@ -1,0 +1,142 @@
+# 26. Remove Duplicates from Sorted Array
+
+## Problem Statement
+
+Given a sorted integer array `nums`, remove the duplicates **in-place** such that each unique element appears only once.
+
+Return the number of unique elements `k`.
+
+The first `k` elements of the array should contain the unique elements.
+
+---
+
+## Example 1
+
+**Input**
+
+```
+nums = [1,1,2]
+```
+
+**Output**
+
+```
+2
+```
+
+Modified Array
+
+```
+[1,2,_]
+```
+
+---
+
+## Example 2
+
+**Input**
+
+```
+nums = [0,0,1,1,1,2,2,3,3,4]
+```
+
+**Output**
+
+```
+5
+```
+
+Modified Array
+
+```
+[0,1,2,3,4,_,_,_,_,_]
+```
+
+---
+
+## Approach
+
+- Since the array is already sorted, duplicate elements appear next to each other.
+- Use two pointers:
+  - `i` → Points to the last unique element.
+  - `j` → Traverses the array.
+- Whenever a new unique element is found, move `i` one step forward and place the new element at `nums[i + 1]`.
+- Finally, return `i + 1`, which is the number of unique elements.
+
+---
+
+## Algorithm
+
+1. Initialize `i = 0`.
+2. Traverse the array using `j` from index `1`.
+3. If `nums[j] != nums[i]`:
+   - Copy `nums[j]` to `nums[i + 1]`.
+   - Increment `i`.
+4. Return `i + 1`.
+
+---
+
+## Dry Run
+
+Input
+
+```
+[1,1,2,2,3]
+```
+
+| j | nums[j] | nums[i] | Action | Array |
+|---|----------|----------|--------|-------|
+|1|1|1|Duplicate|1 1 2 2 3|
+|2|2|1|Copy|1 2 2 2 3|
+|3|2|2|Duplicate|1 2 2 2 3|
+|4|3|2|Copy|1 2 3 2 3|
+
+Unique Elements
+
+```
+[1,2,3]
+```
+
+Return
+
+```
+3
+```
+
+---
+
+## Complexity Analysis
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(1)`
+
+---
+
+## Concepts Used
+
+- Arrays
+- Two Pointer Technique
+- In-place Array Modification
+- Traversal
+
+---
+
+## Java Solution
+
+```java
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i = 0;
+
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                nums[i + 1] = nums[j];
+                i++;
+            }
+        }
+
+        return i + 1;
+    }
+}
+```
