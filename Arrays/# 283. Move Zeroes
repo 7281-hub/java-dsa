@@ -1,0 +1,123 @@
+# 283. Move Zeroes
+
+## Problem Statement
+
+Given an integer array `nums`, move all `0`s to the end while maintaining the relative order of the non-zero elements.
+
+The operation must be performed in-place.
+
+---
+
+## Example 1
+
+**Input**
+
+```
+nums = [0,1,0,3,12]
+```
+
+**Output**
+
+```
+[1,3,12,0,0]
+```
+
+---
+
+## Example 2
+
+**Input**
+
+```
+nums = [0]
+```
+
+**Output**
+
+```
+[0]
+```
+
+---
+
+## Approach
+
+- Use two pointers.
+- `i` points to the position where the next non-zero element should be placed.
+- `j` traverses the array.
+- Copy every non-zero element to the front.
+- Fill the remaining positions with zeros.
+
+---
+
+## Algorithm
+
+1. Initialize `i = 0`.
+2. Traverse the array using `j`.
+3. If `nums[j]` is not zero:
+   - Copy it to `nums[i]`.
+   - Increment `i`.
+4. Fill the remaining positions with `0`.
+
+---
+
+## Dry Run
+
+Input
+
+```
+0 1 0 3 12
+```
+
+After moving non-zero elements
+
+```
+1 3 12 _ _
+```
+
+Fill remaining positions
+
+```
+1 3 12 0 0
+```
+
+---
+
+## Complexity Analysis
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(1)`
+
+---
+
+## Concepts Used
+
+- Arrays
+- Two Pointer Technique
+- In-place Array Modification
+- Traversal
+
+---
+
+## Java Solution
+
+```java
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int i = 0;
+
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != 0) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+
+        while (i < nums.length) {
+            nums[i] = 0;
+            i++;
+        }
+    }
+}
+```
